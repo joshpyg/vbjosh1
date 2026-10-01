@@ -16,3 +16,11 @@ def fetch_apod(pick_date: date, timeout: float = 8) -> dict:
     return r.json()
 
 if st.button("Show picture"):
+    st.subheader(f"{info['title']}  ({info['date']})")
+    if info["image_url"]:
+        st.image(info["image_url"], width="stretch")
+    else:
+        st.info("No image file for this date - see the page below.")
+    st.write(info["explanation"])
+    st.caption("© " + info["copyright"] if info["copyright"] else "Public domain (NASA)")
+    st.markdown(f"[Open on NASA's site]({info['page_url']})")
