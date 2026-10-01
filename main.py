@@ -7,7 +7,7 @@ import requests
 BASE_URL = "https://science.nasa.gov/wp-json/wp/v2/apod-basic"
 st.title("🔭 Space picture of teh day")
 st.caption("Source: NASA APOD (science.nasa.gov)")
-pick_date = st.date_input("Date", value=date.today(), min_value=EARLIEST, max_value=date.today())
+
 
 def fetch_apod(pick_date: date, timeout: float = 8) -> dict:
     """Date goes in the path as YYMMDD, e.g. 2026-09-29 -> 260929. 404 if no entry."""
