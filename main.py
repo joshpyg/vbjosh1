@@ -23,4 +23,4 @@ if st.button("Show picture"):
         st.info("No image file for this date - see the page below.")
     st.write(info["explanation"])
     st.caption("© " + info["copyright"] if info["copyright"] else "Public domain (NASA)")
-    st.markdown(f"[Open on NASA's site]({info['page_url']})")
+    st.markdown(f"[Open on nasa's site]({info['page_url']})")
