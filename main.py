@@ -8,3 +8,5 @@ def fetch_apod(pick_date: date, timeout: float = 8) -> dict:
     r = requests.get(f"{BASE_URL}/{pick_date.strftime('%y%m%d')}", timeout=timeout)
     r.raise_for_status()
     return r.json()
+ans = fetch_apod()
+st.write(ans)
