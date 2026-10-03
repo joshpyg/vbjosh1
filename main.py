@@ -29,7 +29,7 @@ ans = fetch_apod()
 
 
 
-apod = ans[0]
+apod = ans
 
 st.subheader("Title:", apod["title"])
 st.write("Explanation:", apod["explanation"])
