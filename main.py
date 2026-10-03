@@ -34,4 +34,6 @@ apod = ans[0]
 st.subheader("Title:", apod["title"])
 st.write("Explanation:", apod["explanation"])
 st.write("Credit:", apod["credit"])
+
 st.image(apod["hdurl"])
+
