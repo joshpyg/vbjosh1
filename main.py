@@ -9,10 +9,13 @@ st.title("🔭 Space picture of the day")
 st.caption("Source: NASA APOD (science.nasa.gov)")
 
 
-def fetch_apod(timeout: float = 8) -> dict:
-    r = requests.get(BASE_URL, timeout=timeout)
+def fetch_apod():
+    d = st.date_input("Enter a date: ")
+    date = "&date=" + str(d)
+    r = requests.get(f"{base_url + date}")
     r.raise_for_status()
     return r.json()
+
 
 # if st.button("Show picture"):
 #     st.subheader(f"{info['title']}  ({info['date']})")
