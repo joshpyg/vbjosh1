@@ -9,7 +9,7 @@ st.title("🔭 Space picture of the day")
 st.caption("Source: NASA APOD (science.nasa.gov)")
 
 
-def fetch_apod():
+def fetch_apod(d):
     base_url = base_url + "/" + str(d).replace("-", "")[2:]
     r = requests.get(f"{base_url}")
     r.raise_for_status()
