@@ -4,14 +4,14 @@ from datetime import date
 
 import requests
 
-BASE_URL = "https://science.nasa.gov/wp-json/wp/v2/apod-basic?api-key=DORbQF8g9kV8qrcelvFLjkETiiY5XQO6PRjXnvKG"
+BASE_URL = "https://science.nasa.gov/wp-json/wp/v2/apod-basic"
 st.title("🔭 Space picture of the day")
 st.caption("Source: NASA APOD (science.nasa.gov)")
 
 
 def fetch_apod(pick_date: date, timeout: float = 8) -> dict:
     """Date goes in the path as YYMMDD, e.g. 2026-09-29 -> 260929. 404 if no entry."""
-    r = requests.get(f"{BASE_URL}/{pick_date.strftime('%y%m%d')}", timeout=timeout)
+    r = requests.get(BASE_URL, timeout=timeout)
     r.raise_for_status()
     return r.json()
 
@@ -36,4 +36,3 @@ st.write("Explanation:", apod["explanation"])
 st.write("Credit:", apod["credit"])
 
 st.image(apod["hdurl"])
-
