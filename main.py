@@ -25,4 +25,13 @@ def fetch_apod(pick_date: date, timeout: float = 8) -> dict:
 #     st.caption("© " + info["copyright"] if info["copyright"] else "Public domain (NASA)")
 #     st.markdown(f"[Open on nasa's site]({info['page_url']})")
 
-st.subheader({info['title']})
+ans = fetch_apod()
+
+
+
+apod = ans[0]
+
+st.subheader("Title:", apod["title"])
+st.write("Explanation:", apod["explanation"])
+st.write("Credit:", apod["credit"])
+st.image(apod["hdurl"])
