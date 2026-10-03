@@ -9,8 +9,7 @@ st.title("🔭 Space picture of the day")
 st.caption("Source: NASA APOD (science.nasa.gov)")
 
 
-def fetch_apod(pick_date: date, timeout: float = 8) -> dict:
-    """Date goes in the path as YYMMDD, e.g. 2026-09-29 -> 260929. 404 if no entry."""
+def fetch_apod(timeout: float = 8) -> dict:
     r = requests.get(BASE_URL, timeout=timeout)
     r.raise_for_status()
     return r.json()
