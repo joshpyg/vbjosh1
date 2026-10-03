@@ -10,7 +10,6 @@ st.caption("Source: NASA APOD (science.nasa.gov)")
 
 
 def fetch_apod():
-    d = st.date_input("Enter a date: ")
     date = "&date=" + str(d)
     r = requests.get(f"{base_url + date}")
     r.raise_for_status()
@@ -27,6 +26,7 @@ def fetch_apod():
 #     st.caption("© " + info["copyright"] if info["copyright"] else "Public domain (NASA)")
 #     st.markdown(f"[Open on nasa's site]({info['page_url']})")
 
+d = st.date_input("Enter a date: ")
 ans = fetch_apod()
 
 apod = ans[0]
