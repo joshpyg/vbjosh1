@@ -4,7 +4,7 @@ from datetime import date
 
 import requests
 
-BASE_URL = "https://science.nasa.gov/wp-json/wp/v2/apod-ba  sic"
+BASE_URL = "https://science.nasa.gov/wp-json/wp/v2/apod-basic"
 st.title("🔭 Space picture of the day")
 st.caption("Source: NASA APOD (science.nasa.gov)")
 
