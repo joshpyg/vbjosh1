@@ -9,8 +9,7 @@ st.title("🔭 Space picture of the day")
 st.caption("Source: NASA APOD (science.nasa.gov)")
 
 
-def fetch_apod():
-    date = "&date=" + str(d)
+def fetch_apod(date):
     r = requests.get(f"{base_url + date}")
     r.raise_for_status()
     return r.json()
@@ -27,7 +26,7 @@ def fetch_apod():
 #     st.markdown(f"[Open on nasa's site]({info['page_url']})")
 
 d = st.date_input("Enter a date: ")
-ans = fetch_apod()
+ans = fetch_apod(d)
 
 apod = ans[0]
 
