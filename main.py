@@ -38,7 +38,7 @@ st.write(date)
 if st.button("Show picture"):
     ans = fetch_apod(date)
     st.write("Title:", ans["title"])
-    st.write("Explanation:", ans["explanation"])
+    st.markdown(ans["explanation"], unsafe_allow_html=True)
     st.image(ans["hdurl"])
 
 st.write("https://science.nasa.gov/wp-json/wp/v2/apod-basic")
